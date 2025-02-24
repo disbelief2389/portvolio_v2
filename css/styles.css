@@ -4,6 +4,7 @@
     --light: #70a48d;
     --neutral: #365a4c;
     --dark: #1d3c2a;
+    --shadow-accent: #1d3c2a58;
     --shadow: #07140c;
 }
 *{
@@ -28,7 +29,7 @@ main p{
 }
 nav{
     background-color: var(--shadow);
-    border-bottom: 1px solid #1d3c2a58;
+    border-bottom: 1px solid var(--shadow-accent);
 }
 nav ul{
     list-style: none;
@@ -62,4 +63,78 @@ nav a.accent-link:active{
 }
 nav a.active-link{
     border-bottom: 2px solid var(--highlight);
+}
+nav a:active:not(nav a.accent-link:active){
+    background-color: var(--shadow);
+}
+button#open-sidebar-button,
+button#close-sidebar-button{
+    display: none;
+    opacity: 0;
+    transition: 300ms ease;
+    fill: var(--highlight);
+    background: none;
+    border: none;
+    padding: .5em;
+    margin: .75em;
+    margin-left: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    z-index: 10;
+}
+button#open-sidebar-button:active{
+    background-color: var(--highlight);
+    fill: var(--shadow);
+}
+button#close-sidebar-button:active{
+    background-color: var(--highlight);
+    fill: var(--shadow);
+}
+button#close-sidebar-button{
+    fill: var(--highlight);
+}
+#overlay{
+    background: rgba(0, 0, 0, 0.542);
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+    backdrop-filter: blur(10px);
+}
+@media screen and (max-width: 550px){
+    button#open-sidebar-button{
+        display: block;
+        opacity: 1;
+    }
+    button#close-sidebar-button{
+        display: block;
+    }
+    nav{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: min(15em, 100%);
+        z-index: 10;
+        border-left: 1px solid var(--shadow-accent);
+        transition: right 300ms ease-out;
+    }
+    nav.show{
+        right: 0;
+    }
+    nav ul{
+        width: 100%;
+        flex-direction: column;
+    }
+    nav a{
+        width: 100%;
+        padding-left: 2.5em;
+    }
+    nav a.active-link{
+        border-bottom: none;
+    }
+    nav .home-li{
+        margin-right: unset;
+    }
 }

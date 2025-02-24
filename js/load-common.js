@@ -40,8 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             };
 
-// Call the function to add the class to the corresponding nav item
-addClassToNavItem();
-        });
+            // Call the function to add the class to the corresponding nav item
+            addClassToNavItem();
+        })
+        .then(() => initializeSidebar());
     loadHTML('footer', '/footer.html');
 });
