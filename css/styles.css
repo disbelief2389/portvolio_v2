@@ -106,6 +106,10 @@ button#close-sidebar-button{
     pointer-events: none;
     display: none;
 }
+span.italic{
+    font-style: italic;
+    font-size: 0.8em;
+}
 @media screen and (max-width: 550px){
     main{
         padding: min(2rem, 100%);

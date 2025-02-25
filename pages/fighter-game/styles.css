@@ -1,0 +1,42 @@
+.canvas-container{
+    margin: 5rem;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+#healthbar-timer-container{
+    width: 100%;
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+#timer{
+    flex-shrink: 0;
+    background: red;
+    height: 100px;
+    width: 100px;
+}
+.healthbar-wrapper{
+    display: flex;
+    position: relative;
+    background: transparent;
+    border: 2px solid white;
+    height: 30px;
+    width: 100%;
+    margin: 1em;
+}
+.healthbar{
+    position: absolute;
+    height: 100%;
+    background-color: yellow;
+    width: 100%;
+    transition: width 100ms ease;
+}
+#player-health-wrapper{
+    justify-content: flex-end;
+}
+#enemy-health-wrapper{
+    justify-content: flex-start;
+}
