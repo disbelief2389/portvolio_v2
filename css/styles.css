@@ -20,6 +20,7 @@ body{
     min-height: 100vh;
     min-height: 100dvh;
     background-color: var(--shadow);
+    text-align: center;
 }
 main{
     padding: 5em 7em;
