@@ -32,6 +32,8 @@ function initializeSidebar() {
         }, 50);
   
       } else {
+
+        html.style.overflow = 'visible';
   
         // when sidebar is closed:
         openBtn.style.opacity = 1;
