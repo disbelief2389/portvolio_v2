@@ -25,11 +25,11 @@ function initializeSidebar() {
         //     audioControls.classList.add('hidden');
         //   }, 300);
         // }
-        overlay.style.opacity = 1;
+        overlay.style.display = 'block';
         overlay.style.pointerEvents = 'auto';
         setTimeout(() => {
-            overlay.style.display = 'block';
-        }, 300)
+            overlay.style.opacity = 1;
+        }, 50);
   
       } else {
   

@@ -27,6 +27,7 @@ main{
 }
 main p{
     margin-top: .35em;
+    text-align: left;
 }
 nav{
     background-color: var(--shadow);
@@ -103,8 +104,12 @@ button#close-sidebar-button{
     transition: opacity 300ms ease-out;
     backdrop-filter: blur(10px);
     pointer-events: none;
+    display: none;
 }
 @media screen and (max-width: 550px){
+    main{
+        padding: min(2rem, 100%);
+    }
     button#open-sidebar-button{
         display: block;
         opacity: 1;
