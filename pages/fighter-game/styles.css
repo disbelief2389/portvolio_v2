@@ -6,6 +6,7 @@
     align-items: flex-start;
 }
 #healthbar-timer-container{
+    margin-top: 1em;
     width: 100%;
     position: absolute;
     display: inline-flex;
@@ -13,12 +14,19 @@
     align-items: center;
 }
 #timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
     background: red;
     height: 100px;
     width: 100px;
+    border-radius: 50%;
+    font-size: 3em;
+    font-weight: 900;
 }
 .healthbar-wrapper{
+    border-radius: 50px;
     display: flex;
     position: relative;
     background: transparent;
@@ -26,6 +34,7 @@
     height: 30px;
     width: 100%;
     margin: 1em;
+    overflow: hidden;
 }
 .healthbar{
     position: absolute;
@@ -33,10 +42,40 @@
     background-color: yellow;
     width: 100%;
     transition: width 100ms ease;
+    
 }
 #player-health-wrapper{
     justify-content: flex-end;
 }
 #enemy-health-wrapper{
     justify-content: flex-start;
+}
+#results-div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+#results-banner{
+    opacity: 0;
+    transition: opacity 300ms ease;
+    width: 100%;
+    height: 20%;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#names-container{
+    position: absolute;
+    width: 95%;
+    height: 30%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
