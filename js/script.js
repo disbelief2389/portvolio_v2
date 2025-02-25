@@ -25,11 +25,11 @@ function initializeSidebar() {
         //     audioControls.classList.add('hidden');
         //   }, 300);
         // }
-  
+        overlay.style.opacity = 1;
+        overlay.style.pointerEvents = 'auto';
         setTimeout(() => {
-          overlay.style.opacity = 1;
-          overlay.style.pointerEvents = 'auto';
-        })
+            overlay.style.display = 'block';
+        }, 300)
   
       } else {
   
@@ -45,9 +45,11 @@ function initializeSidebar() {
         //     audioControls.classList.remove('hidden');
         //   }, 300);
         // }
-  
         overlay.style.opacity = 0;
         overlay.style.pointerEvents = 'none';
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 300)
       }
     }
   
