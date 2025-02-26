@@ -1,4 +1,7 @@
+
 .canvas-container{
+    color: white;
+    font-family: monospace;
     margin: 5rem;
     position: relative;
     display: inline-flex;
