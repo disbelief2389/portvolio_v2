@@ -1,7 +1,8 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Tiny5&display=swap');
 .canvas-container{
     color: white;
-    font-family: monospace;
+    font-family: 'Tiny5', monospace;
     margin: 5rem;
     position: relative;
     display: inline-flex;
@@ -17,15 +18,16 @@
     align-items: center;
 }
 #timer{
+    border: 2px solid rgba(255, 255, 255, 0.319);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    background: red;
-    height: 100px;
+    background: rgba(0, 0, 0, 0.422);
+    height: 50px;
     width: 100px;
-    border-radius: 50%;
-    font-size: 3em;
+    border-radius: 10px;
+    font-size: 2em;
     font-weight: 900;
 }
 .healthbar-wrapper{
@@ -33,7 +35,7 @@
     display: flex;
     position: relative;
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.204);
     height: 30px;
     width: 100%;
     margin: 1em;
@@ -42,10 +44,18 @@
 .healthbar{
     position: absolute;
     height: 100%;
-    background-color: yellow;
+    background-color: #22C55E;
     width: 100%;
-    transition: width 100ms ease;
-    
+    transition: width 30ms ease;
+    overflow: hidden;
+    z-index: 10;
+}
+.healthbar-backdrop{
+    position: absolute;
+    height: 100%;
+    background-color: #B91C1C;
+    width: 100%;
+    z-index: 1;
 }
 #player-health-wrapper{
     justify-content: flex-end;
@@ -68,15 +78,18 @@
     transition: opacity 300ms ease;
     width: 100%;
     height: 20%;
-    background: red;
+    background: rgba(94, 24, 9, 0.46);
+    backdrop-filter: blur(10px);
+    box-shadow: rgba(0, 0, 0, 0.244) 0 0 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 #names-container{
+    text-transform: uppercase;
     position: absolute;
     width: 95%;
-    height: 30%;
+    height: 2%;
     top: 0;
     display: flex;
     justify-content: space-between;
