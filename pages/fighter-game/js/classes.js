@@ -17,20 +17,25 @@ class Sprite {
         this.framesElapsed = 0
         this.framesHold = 10
         this.offset = offset
+        this.image.onload = () => {
+            this.imageLoaded = true;
+        }
     }
 
     draw() {
-        cCon.drawImage(
-            this.image,
-            this.framesCurrent * (this.image.width / this.framesMax),
-            0,
-            this.image.width / this.framesMax,
-            this.image.height,
-            this.position.x - this.offset.x,
-            this.position.y - this.offset.y,
-            (this.image.width / this.framesMax) * this.scale,
-            this.image.height * this.scale
-        );
+        if (this.imageLoaded) {
+            cCon.drawImage(
+                this.image,
+                this.framesCurrent * (this.image.width / this.framesMax),
+                0,
+                this.image.width / this.framesMax,
+                this.image.height,
+                this.position.x - this.offset.x,
+                this.position.y - this.offset.y,
+                (this.image.width / this.framesMax) * this.scale,
+                this.image.height * this.scale
+            );
+        }
     }
 
     animateFrames() {
