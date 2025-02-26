@@ -57,6 +57,10 @@
     width: 100%;
     z-index: 1;
 }
+#player-health-backdrop{
+    display: flex;
+    justify-content: flex-end;
+}
 #player-health-wrapper{
     justify-content: flex-end;
 }

@@ -52,8 +52,6 @@ class Sprite {
     update() {
         this.draw();
         this.animateFrames();
-
-        
     };
 };
 
@@ -143,21 +141,6 @@ class Fighter extends Sprite {
     }
 
     switchSprite(sprite) {
-        // if alivent is equal to that of the truth
-        if (this.image === this.sprites.death.image) {
-            if (this.framesCurrent === this.sprites.death.framesMax - 1)
-                this.dead = true;
-            return;
-        }
-
-        // overriding all other animations with the attack animation
-        if (
-            this.image === this.sprites.attack1.image &&
-            this.framesCurrent < this.sprites.attack1.framesMax - 1 ||
-            this.image === this.sprites.takeHit.image &&
-            this.framesCurrent < this.sprites.takeHit.framesMax - 1
-        ) return;
-
         switch (sprite) {
             case 'idle':
                 if (this.image !== this.sprites.idle.image) {
@@ -209,5 +192,19 @@ class Fighter extends Sprite {
                 }
                 break;
         }
+        // if alivent is equal to that of the truth
+        if (this.image === this.sprites.death.image) {
+            if (this.framesCurrent === this.sprites.death.framesMax - 1)
+                this.dead = true;
+            return;
+        }
+
+        // overriding all other animations with the attack animation
+        if (
+            this.image === this.sprites.attack1.image &&
+            this.framesCurrent < this.sprites.attack1.framesMax - 1 ||
+            this.image === this.sprites.takeHit.image &&
+            this.framesCurrent < this.sprites.takeHit.framesMax - 1
+        ) return;
     }
 };
