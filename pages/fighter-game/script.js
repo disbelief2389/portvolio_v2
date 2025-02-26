@@ -248,7 +248,6 @@ function animate() {
     ) {
         enemy.isAttacking = false;
         player.takeHit()
-        player.framesCurrent = 1;
         document.getElementById('player-health').style.width = player.health + '%';
     }
     // if enemy misses
