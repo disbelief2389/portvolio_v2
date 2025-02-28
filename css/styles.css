@@ -12,6 +12,24 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Track color */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #888; /* Thumb color */
+        border-radius: 10px;
+        border: 3px solid #f1f1f1; /* Padding around thumb */
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #555; /* Thumb hover color */
+    }
+  
 }
 html{
     font-family: 'Segoe UI', sans-serif;
@@ -25,6 +43,7 @@ html{
 body{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     min-height: 100vh;
     min-height: 100dvh;
@@ -38,7 +57,7 @@ main {
     align-items: center;
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     z-index: 1;
 }
 main#aboutpage{
@@ -50,10 +69,9 @@ main#workpage::before,
 main#contactpage::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     z-index: -1;
     filter: blur(20px) brightness(0.5);
     background-position: center;
@@ -76,6 +94,11 @@ main#contactpage::before {
     width: 100%;
     height: 1px;
     background: linear-gradient(to right, transparent, #b2d6ca18, transparent);
+    margin: 2em 0;
+}
+.section-heading{
+    text-align: left;
+    margin-bottom: .5em;
 }
 .content {
     position: relative;
@@ -83,14 +106,7 @@ main#contactpage::before {
     text-align: center;
     padding: 20px;
 }
-.content-container{
-    p{
-        text-align: left;
-        margin: .6em 0;
-    }
-    h1{
-        margin: 3em auto;
-    }
+.content-container {
     display: flex;
     height: auto;
     flex-direction: column;
@@ -99,10 +115,19 @@ main#contactpage::before {
     background-color: #07140c86;
     padding: 0 5em;
     padding-bottom: 3em;
-    margin: 5em;
+    margin: 5em; /* Set margins except for the top */
     border-radius: 30px;
     backdrop-filter: blur(70px) brightness(2);
     box-shadow: rgba(0, 0, 0, 0.255) 0 0 50px;
+}
+
+.content-container p {
+    text-align: left;
+    margin: .6em 0;
+}
+
+.content-container h1 {
+    margin-top: 2em;
 }
 main > p{
     margin-top: 1em;
@@ -117,17 +142,19 @@ footer{
     background-color: #07140c86;
     padding: 3em 0;
     width: clamp(800px, 80%, 1100px);
-    margin-top: 3em;
+    margin-top: 10em;
     border-radius: 30px 30px 0 0;
     backdrop-filter: blur(70px) brightness(2);
     box-shadow: rgba(0, 0, 0, 0.255) 0 0 50px;
 }
 div#footer:not(.homepage) {
+    position: relative;
     align-self: center;
     display: flex;
     width: clamp(800px, 80%, 1100px);
     justify-content: center;
-    margin-top: 3em;
+    align-items: flex-end;
+    max-height: 130px;
 }
 div#footer.homepage footer{
     background-color: transparent;
