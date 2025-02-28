@@ -19,6 +19,9 @@ html{
     background-color: black;
     scroll-behavior: smooth;
 }
+#slogan{
+    margin: 3em auto;
+}
 body{
     display: flex;
     flex-direction: column;
@@ -110,7 +113,7 @@ a{
 }
 footer{
     position: relative;
-    z-index: 500;
+    z-index: 490;
     background-color: #07140c86;
     padding: 3em 0;
     width: clamp(800px, 80%, 1100px);
