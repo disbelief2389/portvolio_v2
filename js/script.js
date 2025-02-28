@@ -1,6 +1,7 @@
 // Sidebar functionality
 function initializeSidebar() {
     const navbar = document.getElementById('navbar-nav');
+    const navbarDiv = document.getElementById('navbar');
     const openBtn = document.getElementById('open-sidebar-button');
     const closeBtn = document.getElementById('close-sidebar-button');
     const html = document.documentElement;
@@ -69,3 +70,4 @@ function initializeSidebar() {
     closeBtn.addEventListener('click', closeSidebar);
     overlay.addEventListener('click', closeSidebar);
 }
+
