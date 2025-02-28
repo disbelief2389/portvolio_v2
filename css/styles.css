@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 :root{
     --highlight: #b2d6ca;
     --light: #70a48d;
@@ -14,28 +15,48 @@
     scroll-behavior: smooth;
 }
 
+/* Example: Adjusting the thumb’s rounding and color */
+.os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle {
+    background-color: rgba(102, 187, 106, 0.8);
+    border-radius: 8px; /* Rounded corners */
+    /* Other styles for a muted, smooth appearance */
+}
+.os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle {
+    background-color: rgba(102, 187, 106, 0.8);
+    border-radius: 8px;
+}
+  
+
+/* For WebKit browsers */
 ::-webkit-scrollbar {
     width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Track color */
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #888; /* Thumb color */
+    height: 12px;
+  }
+  
+  /* Track (background) */
+  ::-webkit-scrollbar-track {
+    background: #e8f5e9;  /* A very light, earthy green tone */
+  }
+  
+  /* Thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: #66bb6a;  /* A natural, earthy green */
     border-radius: 10px;
-    border: 3px solid #f1f1f1; /* Padding around thumb */
-}
+    border: 3px solid #e8f5e9;  /* Creates some spacing using the track color */
+  }
+  
+  /* Thumb hover effect */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #4caf50;  /* A slightly deeper green on hover */
+  }
 
-::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Thumb hover color */
-}
 html{
     font-family: 'Segoe UI', sans-serif;
     color: var(--highlight);
     background-color: black;
     scroll-behavior: smooth;
+    scrollbar-width: thin;         /* Options: auto, thin */
+    scrollbar-color: #66bb6a #e8f5e9; /* thumb color | track color */
 }
 #slogan{
     margin: 3em auto;
@@ -314,6 +335,10 @@ input{
         border-color: transparent;
     }
 }
+div.scroll-section {
+    position: relative;
+    width: 100%;
+}
 div.projects-container {
     width: 100%;        /* or a fixed width that’s less than the total tile width */
     display: flex;
@@ -324,6 +349,7 @@ div.projects-container {
     border: none;
 }
 div.project-tile {
+    position: relative;
     scroll-snap-align: start;
     -webkit-scroll-snap-align: start;
     margin: .5em;
@@ -354,21 +380,17 @@ div.project-tile {
         border-color: rgba(240, 248, 255, 0.338);
     }
 }
-
-#contact-title {
-    margin-bottom: 0.5em;
-}
-
 div.chevron-buttons {
     pointer-events: none;
     display: flex;
     justify-content: space-between;
     position: absolute;
-    left: 10%;
-    right: 10%;
-    top: 65%;
+    left: 2%;
+    right: 2%;
+    top: 50%;
     button {
-        pointer-events: all;
+        transform: translateY(-50%);
+        pointer-events: auto;
         box-shadow: rgba(0, 0, 0, 0.659) 0 0 20px;
         border: none;
         transition: 50ms ease;
@@ -397,6 +419,10 @@ div.chevron-buttons {
         }
         z-index: 1000;
     }
+}
+
+#contact-title {
+    margin-bottom: 0.5em;
 }
 
 @media screen and (max-width: 900px){

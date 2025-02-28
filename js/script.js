@@ -70,4 +70,3 @@ function initializeSidebar() {
     closeBtn.addEventListener('click', closeSidebar);
     overlay.addEventListener('click', closeSidebar);
 }
-
